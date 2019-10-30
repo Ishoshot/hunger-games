@@ -1,6 +1,7 @@
 <template>
 	<transition name="slide">
-		<v-row app class="mt-10">
+			
+		<v-row app class="mt-6">
 			<!--  -->
 			<v-col md="12" v-if="!times > 0">
 				<v-card class="card">
@@ -25,31 +26,33 @@
 			</v-col>
 			<!--  -->
 
-
 			<!-- MEAL DISPLAY PANEL -->
 			
-			<div class="mealCard row mt-10">
-				
-				<v-col md="4">
-					<v-card class="card" style="border-radius:0px;">
-						<v-img class="white--text align-end" height="200px" :src="meals.strMealThumb">
-						</v-img>
-					</v-card>
-				</v-col>
+			<v-col md="12" v-show="show" class="mealCard mt-10 py-7 px-10">
 
-				<v-col md="4">
-					<v-card class="card" style="border-radius:0px;">
-						<v-img class="white--text align-end" height="200px" :src="meals.strMealThumb">
-						</v-img>
-					</v-card>
-				</v-col>
+				<v-row app>
 
+					<v-col md="4">
+						<v-card class="card" style="border-radius:0px;">
+							<v-img class="white--text align-end" height="auto" :src="meals.strMealThumb">
+							</v-img>
+						</v-card>
+					</v-col>
 
-			</div>
+					<v-col md="8" class="text-left pl-lg-10 px-2 pt-2 pa-0" app>
+						<p style="font-size:20px;" class="font-weight-bold caption pa-0 ma-0 text-capitalize">{{ meals.strArea }} > {{ meals.strCategory }}</p>
+						<h1 class="title text-capitalize">{{ meals.strMeal }}</h1>
+						<p class="font-weight-light text-capitalize">{{ meals.strTags }}</p>
+						<p class="font-weight- text-capitalize text-justify">{{ meals.strInstructions }}</p>
+					</v-col>
+
+				</v-row>
+
+			</v-col>
+
 			<!--  -->
 
 		</v-row>
-
 	</transition>
 </template>
 
@@ -63,6 +66,7 @@ import axios from 'axios';
 		return{
 			meals:[],
 			times:0,
+			show:false,
 		}
     },
 
@@ -72,6 +76,7 @@ import axios from 'axios';
 			axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
 			.then(res => (this.meals = res.data.meals[0]))
 			// .catch(err => console.log(err));
+			this.show = true;
 		},
 	},
 
@@ -87,8 +92,8 @@ import axios from 'axios';
 
 .mealCard{
 	background: rgba(0,0,0,0.03); 
-	border: none; 
-	padding: 5%;
+	border: none;
 	box-shadow: none;
 }
+
 </style>
