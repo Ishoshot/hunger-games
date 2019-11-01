@@ -128,10 +128,10 @@ export default {
 }
 
 .footer{
-  /*margin-top: 10%;*/
 }
 
 .divider{
+  margin-top: 10%;
   background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
   padding: 3px;
 }
