@@ -3,27 +3,16 @@
 			
 	<v-content app>	
 		<!--  -->
-		<v-col md="12" v-if="!times > 0">
+		<v-col md="12">
 			<v-card class="card">
-				<h2>Feeling Hungry?</h2>
-				<v-card-text>Get a random meal by clicking below</v-card-text>
+				<h2>Not Satisfied?</h2>
+				<v-card-text class="font-weight-bold">Slimmy, Yet Satisfying</v-card-text>
 				<v-btn class="ma-2" @click="getMeal()" color="primary">
-					Get meal 🍔
+					Get Another 🍔
 				</v-btn>
 			</v-card>
 		</v-col>
 
-		<!--  -->
-
-		<v-col md="12" v-else>
-			<v-card class="card">
-				<h2>Feeling Hungry?</h2>
-				<v-card-text>Don't like it ?</v-card-text>
-				<v-btn class="ma-2" @click="getMeal()" color="primary">
-					Get another 🍔
-				</v-btn>
-			</v-card>
-		</v-col>
 		<!--  -->
 		
 	<RandomMeal v-bind:meal="meal" :show="show"/>
@@ -46,14 +35,16 @@ export default{
     data(){
 		return{
 			meal:[],
-			times:0,
 			show:false,
 		}
     },
 
+    mounted(){
+    this.getMeal();
+    },
+
 	methods:{
 		getMeal(){
-			this.times ++;
 			axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
 			.then(res => (this.meal = res.data.meals[0]))
 			// .catch(err => console.log(err));

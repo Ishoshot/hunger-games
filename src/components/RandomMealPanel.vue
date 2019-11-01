@@ -1,9 +1,9 @@
 <template>
 	<transition name="slide">
 		
-		<div class="mt-10">
+		<div container class="mt-10">
 		
-		<v-row class="mealCard py-7 px-7" container v-show="show">
+		<v-row class="mealCard py-7 px-7" v-show="show">
 			
 			<v-col md="4">
 				<v-card class="card" style="border-radius:0px;">
