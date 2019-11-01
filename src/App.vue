@@ -51,18 +51,18 @@
       </transition>
     </v-content>
 
-
+    <div class="divider"></div>
     <v-footer padless class="footer">
       <v-card flat tile class="dark--text text-center pa-7">
         
         <v-card-text>
-          <v-btn v-for="icon in icons" :key="icon" class="mx-4 dark--text" icon>
+          <v-btn v-for="icon in icons" :key="icon" class="mx-1 dark--text" icon>
             <v-icon size="24px">{{ icon }}</v-icon>
           </v-btn>
         </v-card-text>
 
         <v-card-text class="dark--text pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui.
         </v-card-text>
 
         <v-divider></v-divider>
@@ -106,6 +106,7 @@ export default {
 
 <style>
   #app {
+  overflow-x: hidden;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -127,6 +128,11 @@ export default {
 }
 
 .footer{
-  margin-top: 10%;
+  /*margin-top: 10%;*/
+}
+
+.divider{
+  background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  padding: 3px;
 }
 </style>

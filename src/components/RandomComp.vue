@@ -1,7 +1,9 @@
 <template>
 	<transition name="slide">
 			
-		<v-row app class="mt-6">
+	<v-content app>	
+
+		<v-row class="mt-6">
 			<!--  -->
 			<v-col md="12" v-if="!times > 0">
 				<v-card class="card">
@@ -30,7 +32,7 @@
 			
 			<v-col md="12" v-show="show" class="mealCard mt-10 py-7 px-10">
 
-				<v-row app>
+				<v-row>
 
 					<v-col md="4">
 						<v-card class="card" style="border-radius:0px;">
@@ -39,11 +41,11 @@
 						</v-card>
 					</v-col>
 
-					<v-col md="8" class="text-left pl-lg-10 px-2 pt-2 pa-0" app>
+					<v-col md="8" class="text-left pl-lg-10 px-2 pt-2 pa-0">
 						<p style="font-size:20px;" class="font-weight-bold caption pa-0 ma-0 text-capitalize">{{ meals.strArea }} > {{ meals.strCategory }}</p>
 						<h1 class="title text-capitalize">{{ meals.strMeal }}</h1>
-						<p class="font-weight-light text-capitalize">{{ meals.strTags }}</p>
-						<p class="font-weight- text-capitalize text-justify">{{ meals.strInstructions }}</p>
+						<p class="tag font-weight-medium text-capitalize">{{ meals.strTags }}</p>
+						<v-card-text class="font-weight-medium dark--text px-0 text-capitalize text-justify">{{ meals.strInstructions }}</v-card-text>
 					</v-col>
 
 				</v-row>
@@ -53,6 +55,9 @@
 			<!--  -->
 
 		</v-row>
+
+	</v-content>
+	
 	</transition>
 </template>
 
@@ -94,6 +99,12 @@ import axios from 'axios';
 	background: rgba(0,0,0,0.03); 
 	border: none;
 	box-shadow: none;
+}
+
+.tag{
+	font-size: 13px;
+	color: #;
+	font-variant: small-caps;
 }
 
 </style>
