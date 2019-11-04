@@ -1,8 +1,10 @@
 <template>
 	<transition name="slide">
+
+	<v-content>
 				
 	<v-sheet class="top">
-		<v-row class="py-7 px-4 px-lg-5">
+		<v-row class="pb-7 px-4 px-lg-5">
 			<v-col lg="4" v-for="category in categories" v-bind:key="category.idCategory" class="pa-0 my-5 px-2">
 				<v-card class="" height="100%">
 					<v-img class="dark--text align-end" height="200px" :src="category.strCategoryThumb">
@@ -26,6 +28,8 @@
 		</v-row>
 	</v-sheet>
 	
+	</v-content>
+
 	</transition>
 </template>
 

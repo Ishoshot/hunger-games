@@ -1,6 +1,6 @@
 <template>
-  <div>  
-    <v-row app class="px-4 px-lg-5 mt-10">
+  <v-content>
+    <v-row app class="px-4 px-lg-5">
       <v-col md="4">
         <v-card class="mx-auto">
           <v-img class="white--text align-end" height="200px" src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
@@ -133,7 +133,7 @@
 
 
     </v-row>
-  </div>
+</v-content>  
 </template>
 
 <script>
@@ -179,7 +179,7 @@
 <style>
 
 .lds-ellipsis {
-  /*display: inline-block;*/
+  display: inline-block;
   float: right;
   position: relative;
   width: 64px;

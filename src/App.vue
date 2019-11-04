@@ -7,14 +7,46 @@
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list>
         
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Dashboard</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <router-link to="/">
+          <v-list-item>
+            <v-list-item-action>
+              <v-icon>mdi-home</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                Home
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
+
+
+        <router-link to="/random">
+          <v-list-item>
+            <v-list-item-action>
+              <v-icon>mdi-shuffle-variant</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                Random meal
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
+
+
+        <router-link to="/category">
+          <v-list-item>
+            <v-list-item-action>
+              <v-icon>mdi-chemical-weapon</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                Categories
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
         
         <v-list-item>
           <v-list-item-action>
@@ -40,28 +72,20 @@
     
     <v-app-bar app clipped-left class="elevation-2">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Hunger Games</v-toolbar-title>
+      <v-toolbar-title>
+        🍔
+        Hunger Games
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text>
-          News
-        </v-btn>
+      <v-toolbar-items>
 
         <v-divider vertical></v-divider>
 
-        <v-btn text>
-          Blog
-        </v-btn>
+          <v-switch class="pa-5" @change="mode" inset label="Dark Mode">
+          </v-switch>
 
-        <v-divider vertical></v-divider>
-
-        <v-btn text>
-          Music
-        </v-btn>
-
-        <v-divider vertical></v-divider>
       </v-toolbar-items>
 
     </v-app-bar>
@@ -83,14 +107,19 @@
           </v-btn>
         </v-card-text>
 
+        <back-to-top bottom="50px" visibleoffset="1300" right="50px">
+          <button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
+        </back-to-top>
+
         <v-card-text class="dark--text pt-0">
           Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui.
         </v-card-text>
 
+
         <v-divider></v-divider>
 
         <v-card-text class="dark--text">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          <strong>Developed with <i class="red--text fas fa-heart"></i> by <a href="https://github.com/ishoshot">Oluwatobi</a> </strong> &copy; {{ new Date().getFullYear() }}
         </v-card-text>
       </v-card>
     </v-footer>
@@ -100,27 +129,27 @@
 </template>
 
 <script>
-// import Hungry from './components/Hungry.vue';
+import BackToTop from 'vue-backtotop';
 
 export default {
   name: 'App',
   components: {
-    // Hungry,
+    BackToTop,
   },
   data: () => ({
     drawer: false,
     icons: [
-      'fab fa-facebook',
+      'fab fa-github',
       'fab fa-twitter',
-      'fab fa-google-plus',
       'fab fa-linkedin',
+      'fab fa-facebook',
       'fab fa-instagram',
     ],
   }),
 
   methods:{
     mode(){
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
 };
@@ -149,6 +178,10 @@ export default {
   color: #42b983;
 }
 
+a{
+  text-decoration: none;
+}
+
 .footer{
 }
 
@@ -157,4 +190,20 @@ export default {
   background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
   padding: 3px;
 }
+
+.btn-to-top {
+  width: 60px;
+  height: 60px;
+  background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.swittch{
+  margin: 0px auto;
+}
+
 </style>
