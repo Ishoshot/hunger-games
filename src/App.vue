@@ -42,6 +42,29 @@
     <v-app-bar app clipped-left class="elevation-2">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Hunger Games</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn text>
+          News
+        </v-btn>
+
+        <v-divider vertical></v-divider>
+
+        <v-btn text>
+          Blog
+        </v-btn>
+
+        <v-divider vertical></v-divider>
+
+        <v-btn text>
+          Music
+        </v-btn>
+
+        <v-divider vertical></v-divider>
+      </v-toolbar-items>
+
     </v-app-bar>
 
     
