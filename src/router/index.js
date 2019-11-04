@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Random from '../views/Random.vue'
+import Categories from '../views/Categories.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/random',
     name: 'random',
     component: Random
+  },
+  {
+    path: '/category',
+    name: 'categories',
+    component: Categories
   },
   {
     path: '/about',

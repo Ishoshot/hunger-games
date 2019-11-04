@@ -22,8 +22,8 @@
 					<v-sheet style="background: transparent;">
 						<v-switch v-model="tutorial" inset label="Video Tutorial ?">
 						</v-switch>
-						<div>
-							<iframe width="420" height="315"
+						<div v-show="tutorial">
+							<iframe width="100%" height="315"
 							:src="meal.strYoutube">
 							</iframe>
 						</div>

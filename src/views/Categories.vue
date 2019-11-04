@@ -1,18 +1,18 @@
 <template>
   <div class="rand">
-    <RandomComp />
+    <Category />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import RandomComp from '@/components/RandomComp.vue'
+import Category from '@/components/Category.vue'
 
 
 export default {
-  name: 'Random',
+  name: 'Categories',
   components: {
-    RandomComp,
+    Category,
   }
 };
 </script>
