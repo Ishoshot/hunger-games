@@ -48,23 +48,6 @@
           </v-list-item>
         </router-link>
         
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-settings</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Settings</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title @click="mode" style="cursor: pointer;">Theme</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
       
       </v-list>
     </v-navigation-drawer>
@@ -76,30 +59,32 @@
         🍔
         Hunger Games
       </v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-toolbar-items>
-
-        <v-divider vertical></v-divider>
-
-          <v-switch class="pa-5" @change="mode" inset label="Dark Mode">
-          </v-switch>
-
-      </v-toolbar-items>
-
     </v-app-bar>
 
     
     <v-content style="padding:0px;">
+    
       <transition>
-        <router-view/>
+          <dialog-drag title="🍔 Hi there!" style="position: fixed; cursor:pointer;">
+          <v-sheet class="pa-4">
+              <p v-show="light">Only in the dark, can one see the stars!</p>
+              <p v-show="!light">Darkness can't drive out itself, only light can do that!</p>
+              <v-switch class="pa-2" @change="mode" inset label="Dark Mode">
+              </v-switch>
+          </v-sheet>
+          </dialog-drag>
+      
       </transition>
+      
+      <router-view/>
+    
     </v-content>
 
+
     <div class="divider"></div>
-    <v-footer padless class="footer">
-      <v-card flat tile class="dark--text text-center pa-7">
+
+    <v-footer padless class="">
+      <v-card flat tile class="dark--text text-center pa-7" style="width:100%;">
         
         <v-card-text>
           <v-btn v-for="icon in icons" :key="icon" class="mx-1 dark--text" icon>
@@ -112,15 +97,16 @@
         </back-to-top>
 
         <v-card-text class="dark--text pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui.
+          Hunger games 🍔, is a all-about-food platform that is publicly saying that: "There are people in the world so hungry, that God cannot appear to them except in the form of bread".
         </v-card-text>
 
 
         <v-divider></v-divider>
 
         <v-card-text class="dark--text">
-          <strong>Developed with <i class="red--text fas fa-heart"></i> by <a href="https://github.com/ishoshot">Oluwatobi</a> </strong> &copy; {{ new Date().getFullYear() }}
+          <strong>Developed with <i class="red--text fas fa-heart"></i> of 🍔 by <a href="https://github.com/ishoshot">Oluwatobi</a> </strong> &copy; {{ new Date().getFullYear() }}
         </v-card-text>
+      
       </v-card>
     </v-footer>
 
@@ -128,13 +114,16 @@
   </v-app>
 </template>
 
+
 <script>
 import BackToTop from 'vue-backtotop';
+import DialogDrag from 'vue-dialog-drag';
 
 export default {
   name: 'App',
   components: {
     BackToTop,
+    DialogDrag,
   },
   data: () => ({
     drawer: false,
@@ -145,15 +134,19 @@ export default {
       'fab fa-facebook',
       'fab fa-instagram',
     ],
+    light:true,
   }),
 
   methods:{
     mode(){
+        this.light = !this.light;
         this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
 };
 </script>
+
+<style src='vue-dialog-drag/dist/vue-dialog-drag.css'></style>
 
 <style>
   #app {
@@ -182,8 +175,6 @@ a{
   text-decoration: none;
 }
 
-.footer{
-}
 
 .divider{
   margin-top: 10%;
@@ -202,8 +193,19 @@ a{
   line-height: 22px;
 }
 
-.swittch{
-  margin: 0px auto;
+.dialog-header{
+  background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+}
+
+.dialog-drag{
+  border: none;
+  box-shadow: none;
+  max-width: 250px;
+}
+
+.dialog-body{
+  background-color: transparent;
+  padding:0px !important;
 }
 
 </style>
