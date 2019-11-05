@@ -25,7 +25,7 @@
 
       <v-col md="4">  
         <v-card class="mx-auto">
-          <v-img class="white--text align-end" height="200px" src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+          <v-img class="white--text align-end" height="200px" src="https://images.pexels.com/photos/541216/pexels-photo-541216.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
             <v-card-title>MEAL CATEGORIES</v-card-title>
           </v-img>
 
@@ -47,7 +47,7 @@
 
       <v-col md="4">  
         <v-card class="mx-auto">
-          <v-img class="white--text align-end" height="200px" src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+          <v-img class="white--text align-end" height="200px" src="https://images.pexels.com/photos/255501/pexels-photo-255501.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
             <v-card-title>CUSTOM MEALS - FILTER</v-card-title>
           </v-img>
 
@@ -72,7 +72,7 @@
               <v-list rounded>
                   <v-list-item-group v-model="item" color="primary">
                       
-                       <router-link to="/random">
+                       <router-link to="/filterAlph">
                         <v-list-item>
                         
                           <v-list-item-icon>
@@ -80,7 +80,7 @@
                           </v-list-item-icon>
 
                           <v-list-item-content class="text-left">
-                            <v-list-item-title>Alphabet</v-list-item-title>
+                            <v-list-item-title>Filter by Alphabet</v-list-item-title>
                           </v-list-item-content>
                         
                         </v-list-item>
@@ -115,21 +115,6 @@
             </div>
         </v-card>
       </v-col>
-
- <v-chip-group
-        v-model="selection"
-        active-class="deep-purple accent-4 white--text"
-        column
-      >
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-
 
 
     </v-row>

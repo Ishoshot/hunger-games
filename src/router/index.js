@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Random from '../views/Random.vue'
 import Categories from '../views/Categories.vue'
+import Alphabet from '../views/Alphabet.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/category',
     name: 'categories',
     component: Categories
+  },
+   {
+    path: '/filterAlph',
+    name: 'alphabet',
+    component: Alphabet
   },
   {
     path: '/about',
