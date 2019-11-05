@@ -65,12 +65,24 @@
     <v-content style="padding:0px;">
     
       <transition>
-          <dialog-drag title="🍔 Hi there!" style="position: fixed; cursor:pointer;">
+          <dialog-drag v-if="showMode" title="🍔 Hi there!" style="position: fixed; cursor:pointer;">
           <v-sheet class="pa-4">
               <p v-show="light">Only in the dark, can one see the stars!</p>
               <p v-show="!light">Darkness can't drive out itself, only light can do that!</p>
               <v-switch class="pa-2" @change="mode" inset label="Dark Mode">
               </v-switch>
+
+              <v-btn class="" @click="showMode = !showMode" color="warning" text>
+              Hide <i class="fas fa-eye-slash"></i>
+              </v-btn>
+          </v-sheet>
+          </dialog-drag>
+
+          <dialog-drag v-else title="🍔 Hi there!" style="position: fixed; cursor:pointer;">
+          <v-sheet class="pa-4">
+              <v-btn class="" @click="showMode = !showMode" color="warning" text>
+              Show <i class="fas fa-eye"></i>
+              </v-btn>
           </v-sheet>
           </dialog-drag>
       
@@ -135,6 +147,7 @@ export default {
       'fab fa-instagram',
     ],
     light:true,
+    showMode:true,
   }),
 
   methods:{
