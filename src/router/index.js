@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Random from '../views/Random.vue'
 import Categories from '../views/Categories.vue'
 import Alphabet from '../views/Alphabet.vue'
+import FourOhFour from '../views/FourOhFour.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/filterAlph',
     name: 'alphabet',
     component: Alphabet
+  },
+  {
+    path: '/*',
+    name: 'FourOhFour',
+    component: FourOhFour
   },
   {
     path: '/about',
