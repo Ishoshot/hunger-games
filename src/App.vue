@@ -72,7 +72,7 @@
               <v-switch class="pa-2" @change="mode" inset label="Dark Mode">
               </v-switch>
 
-              <v-btn class="" @click="showMode = !showMode" color="warning" text>
+              <v-btn class="" @click="showMode = false" color="warning" text>
               Hide <i class="fas fa-eye-slash"></i>
               </v-btn>
           </v-sheet>
