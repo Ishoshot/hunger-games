@@ -1,4 +1,7 @@
-# foody
+# Hunger Games..
+
+This is not really a game as it sounds, LOL. This is just a play around with the MealDB, Vue and others i.e Vueifty, etc
+
 
 ## Project setup
 ```
